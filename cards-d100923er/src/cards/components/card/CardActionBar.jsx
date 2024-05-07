@@ -41,7 +41,6 @@ export default function CardActionBar({
     alert("Call to -" + phone)
   }
 
-  
   return (
     <>
       <CardActions sx={{justifyContent:"space-between"}}>
@@ -80,18 +79,16 @@ export default function CardActionBar({
             onClick={handleCall}>
             <PhoneIcon/>
           </IconButton>
-          {user && user._id ?(
-            <IconButton 
+          {user && user._id ?( 
+          <IconButton 
             aria-label="FavoriteIcon"
             title='Like card' 
             onClick={()=>handleLike(cardId)} >
               <FavoriteIcon color={isLiked ? "error" : "inherit"}/>
-            </IconButton>
-          ):(
-            <IconButton aria-label="FavoriteIcon" disabled>
+          </IconButton>):(
+          <IconButton aria-label="FavoriteIcon" disabled>
               <FavoriteIcon />
-            </IconButton>
-          )} 
+          </IconButton>)} 
         </Box>
       </CardActions>
         <CardDeleteDialog

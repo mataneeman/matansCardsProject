@@ -20,6 +20,7 @@ export default function RightNavBar() {
     sx={{
       display: { xs: "none", md: "inline-flex" },
       justifyContent:'center'
+      
     }}>
       <SearchBar/>
       <IconButton sx={{ ml: 1 }} onClick={toggleDarkMode}>
