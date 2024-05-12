@@ -25,10 +25,10 @@ const CardDeleteDialog=({
       </DialogContentText>
     </DialogContent>
     <DialogActions>
-      <Button onClick={onChangeDialog} color="error">
+      <Button onClick={onChangeDialog} color="info">
         cancel
       </Button>
-      <Button onClick={onDelete} autoFocus color="info">
+      <Button onClick={onDelete} autoFocus color="error">
         Delete card
       </Button>
     </DialogActions>

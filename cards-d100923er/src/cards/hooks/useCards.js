@@ -127,18 +127,23 @@ const handleDeleteCard = useCallback(async (id)=>{
   try {
     setIsLoading(true)
     await deleteCard(id);
+    setSnack("success","The business card has been Deleted")
     setIsLoading(false)
   } catch (error) {
     setIsLoading(false)
     setError(error)
   }
-},[])
+},[setSnack])
     
 
-const handleCardLike = useCallback(async (id) => {
+const handleCardLike = useCallback(async (id,isLiked) => {
   try {
     await changeLikeStatus(id);
-    setSnack("success", "The business card has been Liked");
+   if(isLiked){ 
+    setSnack("error", "The business card has been unLiked")
+  }else{
+    setSnack("success", "The business card has been Liked")
+}
   } catch (error) {
     setError(error)
   }

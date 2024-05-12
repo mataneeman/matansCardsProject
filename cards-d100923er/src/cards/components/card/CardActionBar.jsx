@@ -24,7 +24,7 @@ export default function CardActionBar({
   const [isLiked, setIsLiked] = useState(() => likes.includes(user?._id));
 
   const handleLike = async() => {
-    await handleCardLike(cardId)
+    await handleCardLike(cardId,isLiked)
     setIsLiked((prev)=>!prev)
   }
 

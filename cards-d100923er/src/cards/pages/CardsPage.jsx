@@ -24,8 +24,8 @@ export default function CardsPage() {
     getCardsData();
   }; 
 
-  const onLike = async (id) => {
-    await handleCardLike(id)
+  const onLike = async (id,isLiked) => {
+    await handleCardLike(id,isLiked)
     
   }
 

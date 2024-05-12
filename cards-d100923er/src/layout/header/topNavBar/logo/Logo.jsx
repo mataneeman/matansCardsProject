@@ -16,7 +16,7 @@ export default function Logo() {
         color: isDark ? "white" : "black",
         fontFamily:'fantasy',
         fontWeight:600,
-        fontSize:{xs:"20px",md:"36px"},
+        fontSize:{xs:"25px",md:"36px"},
         mt:1.5,
         ml:1,
         mr:2,
