@@ -26,11 +26,11 @@ export default function EditUserPage() {
     handleUpdateUser(user._id, newUser))
 
     useEffect((_id)=>{
-        handleGetUser(user?._id).then((data)=>{
+        handleGetUser(user._id).then((data)=>{
             const modelUser = mapToModelUser(data)
             setData(modelUser)
         })
-    },[handleGetUser, setData, user?._id])
+    },[handleGetUser, setData, user._id])
    
 
     if(!user) return <Navigate replace to={ROUTES.LOGIN}/>

@@ -19,11 +19,13 @@ export default function RightNavBar() {
     <Box
     sx={{
       display: { xs: "none", md: "inline-flex" },
-      justifyContent:'center'
-      
+      justifyContent:'center',
+      alignItems:'center'
     }}>
       <SearchBar/>
-      <IconButton sx={{ ml: 1 }} onClick={toggleDarkMode}>
+      <IconButton 
+        sx={{ ml: 1 }} 
+        onClick={toggleDarkMode}>
         {isDark ? <LightModeIcon /> : <DarkModeIcon />}
       </IconButton>
       {user && <Logged/>}
