@@ -68,3 +68,49 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+Business Cards React Project
+Introduction
+Welcome to the Business Cards React Project! This project aims to create a user-friendly web application for managing business cards. Users can create, edit, and delete business cards, as well as mark them as favorites. The application provides features for user authentication, user roles (admin and regular user), and dynamic navigation menus based on user permissions.
+
+Technologies Used
+React: Frontend JavaScript library for building user interfaces.
+React Router: Library for routing and navigation in React applications.
+Bootstrap or Material Design: CSS frameworks for styling the application.
+Font Awesome or Material Icons: Libraries for including icons in the application.
+SCSS: Preprocessor scripting language for CSS, allowing for modular and organized styling.
+Axios: Promise-based HTTP client for making HTTP requests from the browser.
+JWT (JSON Web Tokens): Standard for creating JSON-based access tokens for user authentication.
+Google Maps API: API for embedding Google Maps on web pages.
+Features
+Dynamic Navigation Menu: The navigation menu adjusts dynamically based on the user's permissions. It includes a search field and a toggle for switching between light and dark mode.
+
+Authentication: Users can register and log in to the application securely. Password fields enforce complexity requirements to enhance security.
+
+Token-based Authentication: Upon successful login, users receive an encrypted token stored in local storage, ensuring secure and authenticated access to the application.
+
+User Management: Admin users have access to a CRM system for managing user accounts. They can change user statuses and delete users (except other admin users).
+
+Favorite Business Cards: Users can mark business cards as favorites, and a dedicated page displays all favorite cards. Users can also remove cards from their favorites list.
+
+Accessibility: The application adheres to accessibility standards by including appropriate titles, alt attributes for images, and visual cues for form validation.
+
+Bonus Features
+User Profile Editing: Logged-in users can edit their profile details, such as name, email, and password, providing a personalized experience.
+
+Lockout for Failed Login Attempts: The system locks out a user after three consecutive failed login attempts for a specified period, enhancing security against brute force attacks.
+
+Responsive Design
+The project utilizes either Bootstrap or Material Design for responsive design, ensuring optimal display across various devices and screen sizes.
+
+Installation and Usage
+Clone the repository: git clone <https://github.com/mataneeman/matansCardsProject/tree/main>
+Install dependencies: npm install
+Start the development server: npm start
+Access the application in your browser at http://localhost:3000
+Conclusion
+The Business Cards React project aims to provide a modern and efficient solution for managing business cards online. With its robust authentication system, intuitive user interface, and responsive design, it offers a seamless experience for users. Whether you're a business owner managing your contacts or an admin overseeing user accounts, this application provides the tools you need to stay organized and efficient.
+
+For any inquiries, feedback, or issues, please refer to the project's documentation or contact the development team.
+
+Thank you for using the Business Cards React Project! 🚀👩‍💼👨‍💼
