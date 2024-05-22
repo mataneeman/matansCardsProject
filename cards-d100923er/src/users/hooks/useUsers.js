@@ -23,7 +23,9 @@ const useUsers = () => {
           setTokenInLocalStorage(token);
           setToken(token);
           setUser(getUser());
-          navigate(ROUTES.CARDS)
+          navigate(ROUTES.CARDS, {replace:true})
+          window.location.reload()
+
         } catch (error) {
           setError(error.message);
         }
