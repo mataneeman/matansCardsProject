@@ -2,7 +2,7 @@ import { Box } from '@mui/material'
 import React from 'react'
 import NavItem from '../../../../routes/components/NavItem'
 import ROUTES from '../../../../routes/routesModel'
-import { useTheme } from '../../../../providers/CustumThemeProvider'
+import { useTheme } from '../../../../providers/CustomThemeProvider'
 
 export default function NotLogged() {
   const {isDark} = useTheme()

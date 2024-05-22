@@ -11,7 +11,7 @@ import { useUser } from "../providers/UserProvider";
 import useUsers from "../hooks/useUsers";
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import { Button, Grid } from "@mui/material";
-import { useTheme } from "../../providers/CustumThemeProvider";
+import { useTheme } from "../../providers/CustomThemeProvider";
 
 
 

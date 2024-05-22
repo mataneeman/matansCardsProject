@@ -5,7 +5,7 @@ import FormButton from "./FormButton";
 import { useNavigate } from "react-router-dom";
 import Typography from "@mui/material/Typography";
 import LoopIcon from "@mui/icons-material/Loop";
-import { useTheme } from "../../providers/CustumThemeProvider";
+import { useTheme } from "../../providers/CustomThemeProvider";
 
 const Form = ({
   title = "",

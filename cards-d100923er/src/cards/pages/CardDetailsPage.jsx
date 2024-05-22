@@ -7,7 +7,7 @@ import Map from './Map';
 import Spinner from '../../components/Spinner';
 import Error from '../../components/Error';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import { useTheme } from '../../providers/CustumThemeProvider';
+import { useTheme } from '../../providers/CustomThemeProvider';
 
 export default function CardDetailsPage() {
   const{getCardById,card,isLoading,error}=useCards()

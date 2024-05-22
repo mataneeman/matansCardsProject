@@ -3,7 +3,7 @@ import AddIcon from "@mui/icons-material/Add";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import ROUTES from "../../routes/routesModel";
-import { useTheme } from "../../providers/CustumThemeProvider";
+import { useTheme } from "../../providers/CustomThemeProvider";
 import { useUser } from "../../users/providers/UserProvider";
 
 export default function AddNewCardButton() {

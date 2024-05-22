@@ -2,7 +2,7 @@ import React from "react";
 import MenuItem from "@mui/material/MenuItem";
 import NavBarLink from "./NavBarLink";
 import { makeFirstLetterCapital } from "../../layout/header/topNavBar/menu/utils/algoMethods";
-import { useTheme } from "../../providers/CustumThemeProvider";
+import { useTheme } from "../../providers/CustomThemeProvider";
 
 const MenuLink = ({ text, navigateTo, onClick, styles,title }) => {
   const {isDark} = useTheme()

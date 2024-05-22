@@ -4,7 +4,7 @@ import LogoIcon from '../logo/LogoIcon'
 import Logo from '../logo/Logo'
 import NavItem from '../../../../routes/components/NavItem'
 import ROUTES from '../../../../routes/routesModel'
-import { useTheme } from '../../../../providers/CustumThemeProvider'
+import { useTheme } from '../../../../providers/CustomThemeProvider'
 import { useUser } from '../../../../users/providers/UserProvider'
 
 export default function LeftNavBar() {

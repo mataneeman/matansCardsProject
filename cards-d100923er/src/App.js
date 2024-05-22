@@ -3,7 +3,7 @@ import './App.css';
 import Router from './routes/Router';
 import Layout from './layout/Layout';
 import UserProvider from './users/providers/UserProvider';
-import CustumeThemeProvider from './providers/CustumThemeProvider';
+import CustumeThemeProvider from './providers/CustomThemeProvider';
 import SnackbarProviders from './providers/SnackbarProvider';
 
 function App() {

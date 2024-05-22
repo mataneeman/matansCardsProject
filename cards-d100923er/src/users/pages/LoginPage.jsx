@@ -12,7 +12,7 @@ import { Link, Navigate } from "react-router-dom";
 import useUsers from "../hooks/useUsers";
 import { Button, Grid } from "@mui/material";
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
-import { useTheme } from "../../providers/CustumThemeProvider";
+import { useTheme } from "../../providers/CustomThemeProvider";
 
 
 

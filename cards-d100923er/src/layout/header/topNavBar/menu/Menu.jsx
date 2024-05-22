@@ -5,7 +5,7 @@ import { useUser } from "../../../../users/providers/UserProvider";
 import useUsers from "../../../../users/hooks/useUsers";
 import ROUTES from "../../../../routes/routesModel";
 import MenuLink from "../../../../routes/components/MenuLink";
-import { useTheme } from "../../../../providers/CustumThemeProvider";
+import { useTheme } from "../../../../providers/CustomThemeProvider";
 import { IconButton } from "@mui/material";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";

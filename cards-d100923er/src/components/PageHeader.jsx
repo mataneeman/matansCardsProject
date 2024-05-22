@@ -1,6 +1,6 @@
 import { Box, Divider, Typography } from '@mui/material'
 import React from 'react'
-import { useTheme } from '../providers/CustumThemeProvider'
+import { useTheme } from '../providers/CustomThemeProvider'
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';

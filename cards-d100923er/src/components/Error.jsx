@@ -2,7 +2,7 @@ import React from "react";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import { useTheme } from "../providers/CustumThemeProvider";
+import { useTheme } from "../providers/CustomThemeProvider";
 
 const Error = ({ errorMessage }) => {
   const {isDark} = useTheme()

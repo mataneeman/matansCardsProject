@@ -6,7 +6,7 @@ import DarkModeIcon from "@mui/icons-material/DarkMode";
 import NotLogged from './NotLogged';
 import { useUser } from '../../../../users/providers/UserProvider';
 import MoreButton from './MoreButton';
-import { useTheme } from '../../../../providers/CustumThemeProvider';
+import { useTheme } from '../../../../providers/CustomThemeProvider';
 import SearchBar from './SearchBar';
 
 

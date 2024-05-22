@@ -3,7 +3,7 @@ import Cards from './Cards'
 import Error from '../../components/Error'
 import Spinner from '../../components/Spinner'
 import { Typography } from '@mui/material';
-import { useTheme } from '../../providers/CustumThemeProvider';
+import { useTheme } from '../../providers/CustomThemeProvider';
 
 export default function CardsFeedback({
     isLoading,
