@@ -6,7 +6,7 @@ import ROUTES from '../../../../routes/routesModel'
 export default function LogoIcon() {
   return (
     <NavBarLink to={ROUTES.ROOT}>
-      <IconButton>
+      <IconButton title='Cards'>
         <Avatar
         src='/assets/images/business-card-avatar.png'
         alt='Business card avatar'

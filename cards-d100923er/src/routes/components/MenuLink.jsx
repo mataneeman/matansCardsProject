@@ -4,11 +4,11 @@ import NavBarLink from "./NavBarLink";
 import { makeFirstLetterCapital } from "../../layout/header/topNavBar/menu/utils/algoMethods";
 import { useTheme } from "../../providers/CustumThemeProvider";
 
-const MenuLink = ({ text, navigateTo, onClick, styles }) => {
+const MenuLink = ({ text, navigateTo, onClick, styles,title }) => {
   const {isDark} = useTheme()
   return (
     <NavBarLink to={navigateTo}>
-      <MenuItem sx={{ ...styles, color:isDark ? "white" : "black" }} onClick={onClick}>
+      <MenuItem sx={{ ...styles, color:isDark ? "white" : "black" }} onClick={onClick} title={title}>
         {makeFirstLetterCapital(text)}
       </MenuItem>
     </NavBarLink>

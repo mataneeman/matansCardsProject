@@ -39,12 +39,13 @@ const Menu = ({ isOpen, anchorEl, onClose }) => {
 
       <Box>
       
-        <Box sx={{ m: 1 ,display: {md:"none"}}}>
+        <Box sx={{ m: 1 ,display: {md:"none"},width:"70%"}}>
           <SearchBar/>
         </Box>
         
        {user && <MenuLink
           text="about"
+          title="about"
           navigateTo={ROUTES.ABOUT}
           onClick={onClose}
           styles={{ display: { xs: "block", sm: "none" }}}
@@ -55,6 +56,7 @@ const Menu = ({ isOpen, anchorEl, onClose }) => {
          
             <MenuLink
               text="login"
+              title="login"
               navigateTo={ROUTES.LOGIN}
               onClick={onClose}
               styles={{display: { xs: "block", md: "none" } }}
@@ -62,6 +64,7 @@ const Menu = ({ isOpen, anchorEl, onClose }) => {
             />
             <MenuLink
               text="signup"
+              title="signup"
               navigateTo={ROUTES.SIGNUP}
               onClick={onClose}
               styles={{ display: { xs: "block", md: "none" } }}
@@ -72,20 +75,23 @@ const Menu = ({ isOpen, anchorEl, onClose }) => {
           <Box>
             <MenuLink
               text="profile"
+              title='profile'
               navigateTo={ROUTES.USER_PROFILE}
               onClick={onClose}
             />
             <MenuLink
               text="edit account"
+              title="edit account"
               navigateTo={ROUTES.EDIT_USER}
               onClick={onClose} 
             />
-            <MenuItem onClick={onLogout}>Logout</MenuItem>
+            <MenuItem onClick={onLogout} title="logout">Logout</MenuItem>
           </Box>
         )}
         <IconButton  
           onClick={toggleDarkMode} 
-          sx={{display: {xs:"inline-flex" ,md:"none"},ml:1}}>
+          sx={{display: {xs:"inline-flex" ,md:"none"},ml:1}}
+          title={isDark ? 'light mode' : 'dark mode'}>
          {isDark ? <LightModeIcon /> : <DarkModeIcon />}
         </IconButton>
       </Box>

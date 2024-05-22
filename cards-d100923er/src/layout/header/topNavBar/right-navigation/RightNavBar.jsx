@@ -25,7 +25,8 @@ export default function RightNavBar() {
       <SearchBar/>
       <IconButton 
         sx={{ ml: 1 }} 
-        onClick={toggleDarkMode}>
+        onClick={toggleDarkMode}
+        title={isDark ? 'light mode' : 'dark mode'}>
         {isDark ? <LightModeIcon /> : <DarkModeIcon />}
       </IconButton>
       {user && <Logged/>}

@@ -17,7 +17,7 @@ const SearchBar = () => {
         onChange={handleChange}
         endAdornment={
         <InputAdornment position='end'>
-          <IconButton edge="end">
+          <IconButton edge="end" title='Search'>
             <SearchIcon/>
           </IconButton>
         </InputAdornment>
