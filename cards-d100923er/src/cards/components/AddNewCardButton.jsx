@@ -12,7 +12,7 @@ export default function AddNewCardButton() {
   const {user} = useUser()
   return (
     <>
-   {user && user.isBusiness && 
+   {user && (user.isBusiness || user.isAdmin) && 
    <Fab
       color={isDark ? "white" : "primary"}
       aria-label="add"

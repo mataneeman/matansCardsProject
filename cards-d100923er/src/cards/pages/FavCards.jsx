@@ -34,8 +34,8 @@ export default function FavCards() {
             await handleDeleteCard(id);
             await handleGetFavCards();
         };
-        const handleLike = async (id) => {
-            await handleCardLike(id);
+        const handleLike = async (id,isLiked) => {
+            await handleCardLike(id,isLiked);
             await handleGetFavCards();
           };
   return (
