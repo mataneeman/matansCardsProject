@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import useForm from "../../forms/hooks/useForm";
 import initialLoginForm from "../helpers/initialForms/initialLoginForm";
 import loginSchema from "../models/loginSchema";
@@ -10,19 +10,20 @@ import Input from "../../forms/components/Input";
 import { useUser } from "../providers/UserProvider";
 import { Link, Navigate } from "react-router-dom";
 import useUsers from "../hooks/useUsers";
-import { Button, Grid } from "@mui/material";
+import { Button, Grid, Typography } from "@mui/material";
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import { useTheme } from "../../providers/CustomThemeProvider";
+import { useSnack } from "../../providers/SnackbarProvider";
 
 
 
 export default function LoginPage() {
   const {isDark}=useTheme()
-
-  const { handleLogin } = useUsers()
-
+  const { handleLogin,error } = useUsers()
   const { user } = useUser()
-  
+  const [blocked, setBlocked] = useState(false);
+  const [failedAttempts, setFailedAttempts] = useState(0);
+  const setSnack = useSnack()
   const { 
     data, 
     errors, 
@@ -30,7 +31,31 @@ export default function LoginPage() {
     handleReset, 
     validateForm, 
     onSubmit 
-  } = useForm(initialLoginForm, loginSchema, handleLogin);
+  } = useForm(initialLoginForm, loginSchema,handleLogin)
+   
+  useEffect(() => {
+    const savedBlockData = JSON.parse(localStorage.getItem('blockData'));
+    if (savedBlockData && savedBlockData.email === data.email) {
+      const currentTime = new Date().getTime();
+      if (currentTime < savedBlockData.blockUntil) {
+        setBlocked(true);
+        setSnack('error', 'Your account has blocked for 24 hours!');
+      } else {
+        localStorage.removeItem('blockData');
+        setBlocked(false);
+        setFailedAttempts(0);
+      }
+    }
+  }, [data.email, setSnack]);
+
+  useEffect(() => {
+    if (failedAttempts >= 3) {
+      setBlocked(true);
+      const blockUntil = new Date().getTime() + 24 * 60 * 60 * 1000; // 24 hours from now
+      localStorage.setItem('blockData', JSON.stringify({ email: data.email, blockUntil }));
+      setSnack('error', 'Your account is blocked for 24 hours!');
+    }
+  }, [failedAttempts, data.email, setSnack]);
 
   if(user) return <Navigate to={ROUTES.ROOT} replace/>
 
@@ -38,7 +63,7 @@ export default function LoginPage() {
     <Container>
       <PageHeader
         title="Welcome to Login page"
-        subtitle="here you can log in"
+        subtitle="here you can log in to Your account"
       />
     
       <Container
@@ -53,7 +78,12 @@ export default function LoginPage() {
           title="login"
           styles={{ maxWidth: "450px",color: isDark ? "white" : "black" }}
           to={ROUTES.ROOT}
-          onSubmit={onSubmit}
+          onSubmit={(e)=>{
+            if(!blocked){
+              onSubmit(e);
+              setFailedAttempts(failedAttempts + 1); 
+            }
+          }}
           onReset={handleReset}
           validateForm={validateForm}
         >
@@ -73,6 +103,13 @@ export default function LoginPage() {
             onChange={handleChange}
             data={data}
           />
+          {error && (
+            <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'center', marginTop: 2 }}>
+              <Typography color="error" variant="body2" align="center">
+                {error}
+              </Typography>
+            </Grid>
+          )}
         </Form>
       </Container>
           <Grid item xs={12} sx={{display:'flex',justifyContent:'center',}}>
@@ -85,6 +122,7 @@ export default function LoginPage() {
               Sign Up
             </Button>
           </Grid>
+        
     </Container>
   );
 }

@@ -18,6 +18,7 @@ const useUsers = () => {
     const handleLogin = useCallback(
       async (userLogin) => {
         setIsLoading(true);
+        setError(null)
         try {
           const token = await login(userLogin);
           setTokenInLocalStorage(token);
@@ -27,7 +28,7 @@ const useUsers = () => {
           window.location.reload()
 
         } catch (error) {
-          setError(error.message);
+          setError("Invalid email or password");
         }
         setIsLoading(false);
       },
