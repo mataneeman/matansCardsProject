@@ -9,7 +9,7 @@ import '@fontsource/roboto/700.css';
 export default function PageHeader({title,subtitle}) {
   const {isDark}=useTheme()
   return (
-  <Box sx={{pt:3,color: isDark ? 'white' : 'black'}}>
+  <Box sx={{pt:3,textAlign:"center",color: isDark ? 'white' : 'black'}}>
     <Typography 
       variant='h2'
       component='h1' 

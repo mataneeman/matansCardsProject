@@ -42,8 +42,8 @@ export default function LeftNavBar() {
 
      {user && user.isAdmin && 
        <NavItem
-         to={ROUTES.SANDBOX} 
-         label="Sandbox" 
+         to={ROUTES.CRM_PANEL} 
+         label="CRM Panel" 
          sx={{color: isDark ? "white" : "black"}}/>}
      </Box>
     </Box>

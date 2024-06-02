@@ -51,7 +51,7 @@ export default function LoginPage() {
   useEffect(() => {
     if (failedAttempts >= 3) {
       setBlocked(true);
-      const blockUntil = new Date().getTime() + 24 * 60 * 60 * 1000; // 24 hours from now
+      const blockUntil = new Date().getTime() + /*24 * 60*/ 1 * 60 * 1000; // 24 hours/1 minute from now
       localStorage.setItem('blockData', JSON.stringify({ email: data.email, blockUntil }));
       setSnack('error', 'Your account is blocked for 24 hours!');
     }

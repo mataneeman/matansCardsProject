@@ -26,11 +26,19 @@ export default function CardDetailsPage() {
   const{id}=useParams()
   const {isDark} =useTheme()
   const [expanded, setExpanded] =useState(false);
+  const [imgSrc, setImgSrc] = useState(null);
 
+  const handleError = () => {
+    setImgSrc('/assets/images/business-card-top-image.jpg'); // Path to your fallback image
+  };
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
- 
+ useEffect(()=>{
+   if(card){
+    setImgSrc(card.image.url)
+   }
+ },[card])
   useEffect(()=>{
     getCardById(id)
   },[getCardById,id])
@@ -62,8 +70,9 @@ export default function CardDetailsPage() {
               <Typography fontSize={20}><strong>Card Details:</strong></Typography>
               <Avatar 
                 sx={{borderRadius:1 ,width:'90%',height:300,mt:2 }}
-                src={card.image?.url}
+                src={imgSrc}
                 alt={card.image?.alt}
+                onError={handleError}
               />  
               <Paper elevation={5} sx={{mt:2,p:2,mb:2,width:"85%"}}>       
                 <Typography mt={1}><strong>Title:</strong> {card.title} </Typography>

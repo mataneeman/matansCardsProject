@@ -24,6 +24,7 @@ export default function SnackbarProvider({ children }) {
       </SnackbarContext.Provider>
 
       <Snackbar
+      sx={{mb:6}}
         anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
         open={isSnackOpen}
         onClose={() => {

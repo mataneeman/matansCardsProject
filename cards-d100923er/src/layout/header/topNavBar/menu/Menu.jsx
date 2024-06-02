@@ -10,16 +10,19 @@ import { IconButton } from "@mui/material";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import SearchBar from "../right-navigation/SearchBar";
+import { useNavigate } from "react-router-dom";
 
 
 const Menu = ({ isOpen, anchorEl, onClose }) => {
   const { user } = useUser();
   const { handleLogout } = useUsers();
   const {isDark,toggleDarkMode} =useTheme()
+  const navigate = useNavigate()
 
   const onLogout = () => {
     handleLogout();
     onClose();
+    navigate(ROUTES.CARDS)
   };
 
   return (
@@ -42,7 +45,12 @@ const Menu = ({ isOpen, anchorEl, onClose }) => {
         <Box sx={{ m: 1 ,display: {md:"none"},width:"70%"}}>
           <SearchBar/>
         </Box>
-        
+        {user && user.isAdmin &&<MenuLink
+              text="CRM Panel"
+              title="CRM Panel"
+              navigateTo={ROUTES.CRM_PANEL}
+              onClick={onClose} 
+            />}
        {user && <MenuLink
           text="about"
           title="about"
@@ -85,6 +93,7 @@ const Menu = ({ isOpen, anchorEl, onClose }) => {
               navigateTo={ROUTES.EDIT_USER}
               onClick={onClose} 
             />
+            
             <MenuItem onClick={onLogout} title="logout">Logout</MenuItem>
           </Box>
         )}

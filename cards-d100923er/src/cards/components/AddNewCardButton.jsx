@@ -19,7 +19,7 @@ export default function AddNewCardButton() {
       title="Add new card"
       sx={{
         position: "fixed",
-        bottom: 75,
+        bottom: 80,
         right: 16,
       }}
       onClick={() => {

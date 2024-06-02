@@ -27,6 +27,7 @@ import EditCardPage from '../cards/pages/EditCardPage';
 import MyCards from '../cards/pages/MyCards';
 import FavCards from '../cards/pages/FavCards';
 import EditUserPage from '../users/pages/EditUserPage';
+import CrmPanel from '../users/pages/CrmPanel';
 
 export default function Router() {
   return (
@@ -43,6 +44,7 @@ export default function Router() {
        <Route path={ROUTES.MY_CARDS} element={<MyCards/>}/>
        <Route path={ROUTES.FAV_CARDS} element={<FavCards/>}/>
        <Route path={ROUTES.EDIT_USER} element={<EditUserPage/>}/>
+       <Route path={ROUTES.CRM_PANEL} element={<CrmPanel/>}/>
 
        <Route path={ROUTES.SANDBOX} element={<SandBox/>}>
           <Route path='counter' element={<Counter/>}/>
