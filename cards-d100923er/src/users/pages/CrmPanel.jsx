@@ -174,7 +174,7 @@ useEffect(()=>{
         </Box>
         <Box sx={{ textAlign: "center", mt: 2 }}>
           <Typography variant="body1">
-              Total number of updated users: {currentUsers.length - filterUsers.length}
+              Total number of users: {currentUsers.length + filterUsers.length}
           </Typography>
         </Box>
       </Paper>
