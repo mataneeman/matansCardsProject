@@ -37,7 +37,7 @@ export default function Cards({
         ref={scrollContainerRef}
       >
         {cards.map((card) => (
-          <Box key={card._id} sx={{ flex: '0 0 auto', margin: '0 10px' }}>
+          <Box key={card._id} sx={{ flex: '0 0 auto', margin: '10px 10px' }}>
             <CardComponent
               card={card}
               handleCardDelete={handleCardDelete}

@@ -29,7 +29,7 @@ export default function CardDetailsPage() {
   const [imgSrc, setImgSrc] = useState(null);
 
   const handleError = () => {
-    setImgSrc('/assets/images/business-card-top-image.jpg'); // Path to your fallback image
+    setImgSrc('/assets/images/business-card-top-image.jpg');
   };
   const handleExpandClick = () => {
     setExpanded(!expanded);

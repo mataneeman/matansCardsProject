@@ -5,7 +5,7 @@ export default function CardHeaderComponent({ image }) {
   const [imgSrc, setImgSrc] = useState(image.url);
 
   const handleError = () => {
-    setImgSrc('/assets/images/business-card-top-image.jpg'); // Path to your fallback image
+    setImgSrc('/assets/images/business-card-top-image.jpg');
   };
 
   return (
