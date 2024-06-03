@@ -76,11 +76,7 @@ useEffect(()=>{
         subtitle="Here you can manage the users - click on a user to open delete and edit status user buttons."
       />
       <Container sx={{width:"100%" ,pb:3}}>
-        <Box sx={{textAlign:"center"}}>
-          <Button variant="contained" onClick={handleRefresh} sx={{ marginBottom: 2 }}>
-            Refresh
-          </Button>
-        </Box>
+
       <Paper sx={{ padding: 2 }}>
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 300 }} aria-label="CRM Panel">

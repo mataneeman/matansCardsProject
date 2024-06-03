@@ -8,6 +8,7 @@ import RecentActorsIcon from '@mui/icons-material/RecentActors';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { useUser } from '../../users/providers/UserProvider';
 import { useTheme } from '../../providers/CustomThemeProvider';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 
 export default function Footer() {
   const navigate= useNavigate()
@@ -36,6 +37,11 @@ export default function Footer() {
         label="Favorites"
         icon={<FavoriteBorderIcon/>}
         onClick={()=>navigate(ROUTES.FAV_CARDS)}
+      />}
+      {user && user.isAdmin && <BottomNavigationAction
+        label="Favorites"
+        icon={<AdminPanelSettingsIcon/>}
+        onClick={()=>navigate(ROUTES.CRM_PANEL)}
       />}
     </BottomNavigation>
     <Box justifyContent="space-between" sx={{boxSizing:"5px",display:{xs:"none",md:"inline-flex"}}}>
